@@ -5,6 +5,15 @@
   <a href="https://the-last-alibi.netlify.app/"><strong>🎮 PLAY THE GAME — LIVE DEMO</strong></a>
 </p>
 
+<p align="center">
+  <img src="screenshots/The%20Last%20Alibi_%20A%20Gothic%20Case%20File.png" alt="THE LAST ALIBI - Game Cover" width="100%">
+</p>
+
+<p align="center">
+  <img src="screenshots/End%20Reveal.png" alt="THE LAST ALIBI - Final Reveal Gameplay Screenshot" width="100%">
+</p>
+
+
 **A multiplayer mystery game of deduction, deception, and psychological mind games.**
 
 THE LAST ALIBI puts players inside a collection of mysterious cases where every clue matters, every suspect has a story, and one wrong accusation can change the outcome.
