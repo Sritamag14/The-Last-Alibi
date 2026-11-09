@@ -1,31 +1,94 @@
 # THE LAST ALIBI
+### Every suspect has a story. Every story has a crack.
 
-A room-code mystery game for 2–8 players with twelve authored cases, Duo Mode, and Multiplayer Mode.
+<p align="center">
+  <a href="https://the-last-alibi.netlify.app/"><strong>🎮 PLAY THE GAME — LIVE DEMO</strong></a>
+</p>
 
-## Run locally
+**A multiplayer mystery game of deduction, deception, and psychological mind games.**
 
-Requires Node.js 22 or newer.
+THE LAST ALIBI puts players inside a collection of mysterious cases where every clue matters, every suspect has a story, and one wrong accusation can change the outcome.
 
-```sh
-node server.js
-```
+Investigate, interrogate, challenge contradictions, and cast your final vote. Can you uncover the truth before the culprit gets away?
 
-Open http://localhost:4173. For devices on the same Wi-Fi, open the host computer's LAN address on port 4173. Create a room and share its five-character code. Local Node sessions use the existing in-memory backend and SSE transport; restarting that server clears local rooms.
+---
 
-## Publish on Netlify
+## 🎮 Game Modes
 
-The Netlify version uses `netlify/functions/game.ts` for game actions and polling, and stores room records in the site-wide Netlify Blobs store with strong consistency and conditional writes. Rooms expire after seven days without activity. No external database, site secrets, or manually configured environment variables are required.
+### Duo Mode
+Investigate a case alongside an AI-controlled mystery. Question suspects, examine evidence, and identify the responsible NPC.
 
-1. Download and unzip `netlify-ready-game.zip` into a folder.
-2. Sign in to Netlify, open Netlify Drop, and drag the extracted project folder (not only `public/`) into the deploy area.
-3. Wait for the signed-in project build to finish. The root `netlify.toml` sets the publish folder, function folder, Node version, and build command.
-4. Open the assigned Netlify URL. Share that URL and the five-character room code with players.
+### Multiplayer Mode
+Play with **3–8 players** in a shared mystery room. Each player receives private information while everyone works with shared evidence. Discuss theories, challenge statements, and secretly vote for the responsible player.
 
-Netlify must build the project while you are signed in so it can bundle and deploy the Function. Review the site's audience setting before sharing the URL publicly. Room data is scoped to the Netlify site and accessed only by the Function; player tokens remain in browser session storage and are sent in POST bodies.
+## 🔎 Key Features
 
-The existing scoring, cases, roles, clues, votes, and reveal logic remain authored in the project. The Function only advances phases and persists server-validated game actions; clients cannot submit scores or unrevealed solutions.
+- **12 unique cases** spanning murder, heists, disappearances, forgery, and sabotage.
+- **Private dossiers** containing player-specific information.
+- **Shared evidence** to investigate and connect.
+- **Interrogation mechanics** for questioning suspects and other players.
+- **Contradiction challenges** to test competing statements.
+- **Secret voting** before the final reveal.
+- **Scoring system** rewarding correct deductions and statements.
+- **Room codes** for multiplayer sessions.
+- **Final reveals and rematches** to close a case and play again.
 
+## 🕯️ How to Play
 
-### Final polish update
+1. Choose Duo Mode or Multiplayer Mode.
+2. Start a case or join an existing room.
+3. Read your private dossier and examine the available evidence.
+4. Investigate clues and build your theory.
+5. Interrogate suspects and challenge contradictions.
+6. Cast your final vote.
+7. Discover the truth during the final reveal.
 
-Duo NPC interrogation now selects a case-grounded response using the question category and wording (motive, timeline/alibi, evidence, or secret/evasive response) instead of repeating the same alibi for every question. The phase navigation also has a restrained antique dossier treatment.
+## 🏆 Scoring
+
+- Correct culprit identification: **+3 points**
+- Submitting a statement: **+1 point**
+- Escape reward: **+2 points** when fewer than half of the players identify the responsible player.
+
+## 🛠️ Technology Stack
+
+- JavaScript
+- TypeScript
+- HTML5 and CSS3
+- Node.js
+- Netlify Functions
+- Netlify Blobs
+
+## ⚙️ Architecture
+
+THE LAST ALIBI uses server-authoritative game logic to manage multiplayer rooms and game progression.
+
+The backend handles player actions, room state, case progression, voting, and scoring. Server-Sent Events (SSE) support live updates between connected players, while Netlify Functions provide the deployed server-side game functionality.
+
+## 🚀 Live Demo
+
+**Play THE LAST ALIBI:**  
+https://the-last-alibi.netlify.app/
+
+## 📸 Screenshots
+
+The game features a vintage mystery-inspired visual identity, combining midnight navy interfaces with antique gold, copper, and ivory details.
+
+## 🔮 Future Development
+
+Planned improvements include:
+
+- Richer gamified graphics and visual effects.
+- Background music and atmospheric sound design.
+- More immersive, video-based interactive gameplay.
+- Deeper code-driven mechanics and expanded gameplay systems.
+
+## 👩‍💻 Project
+
+**THE LAST ALIBI**  
+Created by **Sritama Ganguly**
+
+A game development project exploring multiplayer interaction, deduction mechanics, mystery storytelling, and interactive gameplay.
+
+---
+
+*Every suspect has a story. Every story has a crack. Find yours before the truth finds you.*
