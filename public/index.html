@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#111821">
+<title>The Last Alibi</title>
+<link rel="stylesheet" href="/public/style.css">
+</head>
+<body>
+<header class="top"><div class="brand">THE LAST ALIBI</div><div id="connection" class="connection">Offline</div></header>
+<main id="app">
+<div id="notice" class="notice hidden" role="alert" aria-live="polite"></div>
+<section id="entry" class="entry panel">
+<p class="eyebrow">A live mystery for 2–8 players</p>
+<h1>The Last Alibi</h1>
+<p class="entry-tagline">Every story has a crack.</p>
+<p class="entry-copy">Enter a private case room, compare what the evidence allows, and find the one account that cannot hold.</p>
+<div class="entry-create">
+<label for="name">Your name<input id="name" maxlength="24" autocomplete="nickname" placeholder="e.g. Alex" required></label>
+<label for="target-count">Players needed<select id="target-count"><option value="2">2 players · Duo Mode</option><option value="3">3 players · Multiplayer</option><option value="4" selected>4 players · Multiplayer</option><option value="5">5 players · Multiplayer</option><option value="6">6 players · Multiplayer</option><option value="7">7 players · Multiplayer</option><option value="8">8 players · Multiplayer</option></select></label>
+<button id="create" class="primary">Create a Case Room</button>
+<p class="fine">Choose the number of seats before creating the room. Share its five-letter code so friends can join.</p>
+</div>
+<div class="divider"><span>or join your group</span></div>
+<div class="entry-join">
+<label for="code">Room code<input id="code" maxlength="5" autocomplete="off" placeholder="Enter 5-letter code"></label>
+<button id="join">Join a Room</button>
+</div>
+<p id="recovery" class="muted hidden"></p>
+</section>
+<div id="game" class="hidden">
+<section class="gamehead panel">
+<div class="gamehead-copy"><p class="eyebrow">CASE FILE <span id="room-code"></span></p><h1 id="case-heading">The Last Alibi</h1><div class="gamehead-meta"><span id="mode-label" class="mode-chip">Room mode</span><span id="phase-title" class="phase-chip">Waiting room</span></div><p id="phase-status"></p></div>
+<div id="timer-box" class="timerbox"><span id="timer">—</span><small id="timer-label"></small></div>
+</section>
+<nav class="phase-track" aria-label="Case progress"><ol id="phase-progress"></ol></nav>
+<div id="lobby" class="panel hidden">
+<h2>Players <span id="player-count"></span></h2><p class="eyebrow" id="room-mode"></p><p>This room needs <strong id="player-target">4</strong> players. The host can open the case when every seat is filled.</p>
+<div id="players" class="player-list"></div>
+<p class="muted" id="lobby-rules">Room mode is fixed when the host creates the room. Multiplayer scoring: correct accusation +3, escape +2 when configured, statement +1.</p>
+<button id="start" class="primary" disabled>Open the case</button>
+</div>
+<div id="round" class="hidden">
+<section id="phase-workspace" class="panel phase-workspace" aria-live="polite"></section>
+<div class="columns">
+<section class="panel dossier"><p class="eyebrow">YOUR PRIVATE DOSSIER</p><h2 id="character"></h2><p id="character-title" class="muted"></p><div class="pill" id="role"></div><h3>Your objective</h3><p id="objective"></p><h3>Your motive</h3><p id="motive"></p><h3>Your alibi</h3><p id="alibi"></p><h3>Your private clue</h3><blockquote id="clue"></blockquote><p id="secret" class="secret"></p><label id="duo-statement-wrap" class="hidden">Your public statement<textarea id="duo-statement" maxlength="320" placeholder="Share a concise observation or theory…"></textarea></label><button id="statement" class="secondary">Put my statement on the board</button></section>
+<section class="panel"><div class="row"><div><p class="eyebrow">SHARED EVIDENCE BOARD</p><h2>What the house remembers</h2></div><span class="muted">Public to everyone</span></div><div id="evidence" class="evidence"></div><div id="timeline-board" class="timeline-board"></div><h3>Suspects at the table</h3><div id="suspects" class="player-list compact"></div></section>
+</div>
+<div class="columns lower">
+<section class="panel"><div class="row"><div><p class="eyebrow">THE ROOM</p><h2>Statements & discussion</h2></div></div><div id="statements" class="statements"></div><h3>Case activity</h3><ol id="activity" class="activity-feed" aria-live="polite"></ol><h3>Open discussion</h3><div id="chat" class="chat" aria-live="polite"></div><form id="chat-form" class="chatform"><input id="chat-input" maxlength="280" autocomplete="off" placeholder="Share a theory…"><button>Send</button></form></section>
+<section id="voting-panel" class="panel hidden"><p class="eyebrow">SECRET VOTE</p><h2 id="vote-title">Resolve the mystery</h2><p>Your sealed vote stays private until all votes are in.</p><div id="vote-options" class="vote-options"></div><p id="vote-status" class="muted"></p></section>
+</div>
+<section id="notebook" class="panel notebook-panel"></section>
+<div class="host-actions"><button id="call-vote" class="primary hidden">Call the vote</button></div>
+</div>
+<section id="reveal" class="panel hidden"></section>
+</div>
+</main>
+<footer><span>THE LAST ALIBI</span><span>Rooms are shared with your group and expire after seven days without activity.</span></footer>
+<script src="/public/app.js" defer></script>
+</body>
+</html>

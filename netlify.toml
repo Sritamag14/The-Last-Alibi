@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[redirects]]
+  from = "/public/*"
+  to = "/:splat"
+  status = 200
